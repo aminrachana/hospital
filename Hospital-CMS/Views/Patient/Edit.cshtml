@@ -1,0 +1,54 @@
+﻿@model Hospital_CMS.Models.ViewModels.UpdatePatient
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Patient</h2>
+
+<form action="/Patient/Update/@Model.SelectedPatient.PatientId" method="POST">
+    <div style="display:none;">
+        @* Pass through the patient ID *@
+        <input type="text" name="PatientId" value="@Model.SelectedPatient.PatientId" />
+    </div>
+    <div>
+        <label>Patient Firstname:</label> <input type="text" name="PFName" value="@Model.SelectedPatient.PFName" />
+    </div>
+    <div>
+        <label>Patient Lastname:</label> <input type="text" name="PLName" value="@Model.SelectedPatient.PLName" />
+    </div>
+    <div>
+        <label>Gender:</label> <input type="text" name="Gender" value="@Model.SelectedPatient.Gender" />
+    </div>
+    <div>
+        <label>Birth Date:</label> <input type="datetime" name="BirthDate" value="@Model.SelectedPatient.BirthDate" />
+    </div>
+    <div>
+        <label>Healthcard Number:</label> <input type="text" name="HealthcardNo" value="@Model.SelectedPatient.HealthcardNo" />
+    </div>
+    <div>
+        <label>Contact Number:</label> <input type="text" name="ContactNo" value="@Model.SelectedPatient.ContactNo" />
+    </div>
+    <div>
+        <label>Room ID:</label>
+
+        <select name="RoomId">
+            @foreach (var room in Model.RoomOptions)
+            {
+                <option value="@room.RoomId">@room.RoomNo</option>
+
+            }
+        </select>
+        <select name="RoomId">
+            @foreach (var room in Model.RoomOptions)
+            {
+                <option value="@room.RoomId">@room.RoomType</option>
+            }
+        </select>
+
+    </div>
+    <div>
+        <input type="submit" value="Update Patient" />
+    </div>
+</form>
+

@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.PatientDto
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<button type="submit" style=" border-radius: 5px;"><a style="color:#000000;" href="/Patient/List">Go back to list</a></button>
+
+<button type="submit" style="background: #0c2ac4; border-radius: 5px;"><a style="color:#ffffff""; href="/Patient/Edit/@Model.PatientId">Update</a></button>
+
+<button type="submit" style=" background: #ff0000; float:right; border-radius: 5px;"><a style="color:#000000;" href="/Patient/DeleteConfirm/@Model.PatientId">Delete</a></button>
+<br/>
+
+<h2>@Model.PFName @Model.PLName</h2>
+<div>Gender: @Model.Gender</div>
+<div>Birth Date: @Model.BirthDate</div>
+<div>HealthCard Number: @Model.HealthcardNo</div>
+<div>Contact Number: @Model.ContactNo</div>
+<div>Room Number: @Model.RoomNo</div>
+<div>Room Type: @Model.RoomType</div>

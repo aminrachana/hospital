@@ -1,0 +1,10 @@
+﻿{
+    "PatientId" : 6,
+    "PFName" : "Sally",
+    "PLName" : "Warner",
+    "Gender" : "Female",
+    "BirthDate" : "02/17/1994",
+    "HealthcardNo" : "2345-453-128 AS",
+    "ContactNo" : "697-456-6893",
+    "RoomId" : 3
+}

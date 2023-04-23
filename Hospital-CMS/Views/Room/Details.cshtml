@@ -1,0 +1,24 @@
+﻿@model Hospital_CMS.Models.ViewModels.DetailsRoom
+
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<button type="submit" style=" border-radius: 5px;"><a style="color:#000000;" href="/Room/List">Go back to list</a></button>
+
+<button type="submit" style="background: #0c2ac4; border-radius: 5px;"><a style="color:#ffffff" "; href="/Room/Edit/@Model.SelectedRoom.RoomId">Update</a></button>
+
+<button type="submit" style=" background: #ff0000; float:right; border-radius: 5px;"><a style="color:#000000;" href="/Room/DeleteConfirm/@Model.SelectedRoom.RoomId">Delete</a></button>
+<br />
+
+<h2>@Model.SelectedRoom.RoomNo</h2>
+<div>Room Type: @Model.SelectedRoom.RoomType</div>
+
+<div style="margin-top:100px;">
+<h3>Patients related to this Room</h3>
+ @foreach (var patient in Model.RelatedPatients)
+        {
+            <a href="/Patient/Details/@patient.PatientId">@patient.PFName @patient.PLName,</a>
+        }
+</div>

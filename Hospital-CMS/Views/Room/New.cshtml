@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Room</h2>
+
+<form action="/Room/Create" method="POST">
+    <div>
+        <label>Room Number:</label> <input type="text" name="RoomNo" />
+    </div>
+    <div>
+        <label>Room Type:</label> <input type="text" name="RoomType" />
+    </div>
+
+    <br/>
+
+    <div>
+        <input type="submit" value="Add Room" style="background: #129820; border-radius: 5px; color: #ffffff;"/>
+    </div>
+</form>
+

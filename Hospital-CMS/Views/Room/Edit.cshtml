@@ -1,0 +1,21 @@
+﻿@model Hospital_CMS.Models.RoomDto
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Room</h2>
+
+<form action="/Room/Update/@Model.RoomId" method="POST">
+    <div>
+        <input type="hidden" name="RoomId" value="@Model.RoomId" />
+    </div>
+    <div>
+        <label>Room Number:</label> <input type="text" name="RoomNo" value="@Model.RoomNo" />
+    </div>
+    <div>
+        <label>Room Type:</label> <input type="text" name="RoomType" value="@Model.RoomType" />
+    </div>
+    <div>
+        <input type="submit" value="Update Room" />
+    </div>
+</form>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Hospital_CMS.Models.RoomDto>
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create Patient</h2>
+
+<form action="/Patient/Create" method="POST">
+    <div>
+        <label>Patient Firstname:</label> <input type="text" name="PFName" />
+    </div>
+    <div>
+        <label>Patient Lastname:</label> <input type="text" name="PLName" />
+    </div>
+    <div>
+        <label>Gender:</label> <input type="text" name="Gender" />
+    </div>
+    <div>
+        <label>Birth Date:</label> <input type="date" name="BirthDate" />
+    </div>
+    <div>
+        <label>Healthcard Number:</label> <input type="text" name="HealthcardNo" />
+    </div>
+    <div>
+        <label>Contact Number:</label> <input type="text" name="ContactNo" />
+    </div>
+    <div>
+        <label>Room:</label> 
+        <select name="RoomId" style="color:#000;">
+            @foreach (var room in Model)
+            {
+                 <option value="@room.RoomId">@room.RoomNo</option>     
+            }
+        </select>
+
+        <select  name="RoomId"  style="color:#000;">
+            @foreach (var room in Model)
+            {
+                <option value="@room.RoomId">@room.RoomType</option>
+            }
+        </select>
+    </div>
+
+    <br/>
+
+    <div>
+        <input type="submit" value="Add Patient" style="background: #129820; border-radius: 5px; color: #ffffff;"/>
+    </div>
+
+</form>
+
